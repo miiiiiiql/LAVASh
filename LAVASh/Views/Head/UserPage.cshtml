@@ -1,0 +1,20 @@
+﻿@model LAVASh.Models.UserPageModel
+
+@{
+    ViewData["Title"] = @Model.Name;
+}
+<div class="text-center">
+    <div>
+        <h1 class="display-4">Задачи @Model.Name</h1>
+    </div>
+    <table class = "table">
+        <tr><td>Имя задачи</td> <td>Описание</td> <td>Дата выполнения</td> <td>Место выполнения</td> <td>Выполнено?</td> </tr>
+        @foreach (var user in Model.Tasks)
+        {
+            <tr> <td> <p>@user.Name</p> </td> <td> <p>@user.Description</p> </td> <td> <p>@user.TimeToDo</p> </td> <td> <p>@user.Place</p> </td> <td> <p>@user.IsDone</p> </td></tr>
+        }
+        
+        
+    </table>
+    <a type="button" asp-action="AddTask" asp-controller="Head" asp-route-id="@Model.Id">Дать задачу</a> 
+</div>

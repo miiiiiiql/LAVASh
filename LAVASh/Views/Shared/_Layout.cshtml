@@ -1,0 +1,130 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - InternetShop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/InternetShop.styles.css" asp-append-version="true" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/style.css" >
+    <link rel="stylesheet" href="~/css/responsive.css" >
+
+    
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" asp-append-version="true">
+
+    
+    
+
+</head>
+<body>
+
+    <div class="site-branding-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="logo">
+                        <h1><a asp-controller = "Home" asp-action = "Index">L<span>AVASh</span></a></h1>
+                    </div>
+                </div>
+                
+     
+            </div>
+            <div class="row">
+                
+            </div>
+        </div>
+    </div> <!-- End site branding area -->
+
+    <div class="mainmenu-area">
+                    <nav class="navbar navbar-expand-sm border-bottom ">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                                <ul class="navbar-nav flex-grow-1" >
+                                    <li class="nav-item ">
+                                                <a class="nav-link text-white" asp-area="" asp-controller="Subordinate" asp-action="list">Мои задачи</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                                <a class="nav-link text-white" asp-area="" asp-controller="Head" asp-action="list">Мои подчинённые</a>
+                                    </li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </nav>
+                </div> <!-- End mainmenu area -->
+    
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div class="footer-top-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-about-us">
+                        <h2>L<span>AVASh</span></h2>
+                        <p>Система автоматизированного контроля и учета работы персонала.
+                            Lite Automatic Variable Apparatus System
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Навигация </h2>
+                        <ul>
+                            <li><a>Личный кабинет</a></li>
+                            <li><a>Мои задачи</a></li>
+                            <li><a>Мои подчинённые</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+                
+                
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Сотрудничество</h2>
+                        <p>Если вас заинтересовала данная система, то оставьте сови контактные данные, мы обязательно с вами свяжемся</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Ваш email">
+                            <input type="submit" value="отправить">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="copyright">
+                        <p>&copy; 2022 LAVASh. All Rights Reserved. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

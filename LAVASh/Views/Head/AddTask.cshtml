@@ -1,0 +1,42 @@
+﻿@model LAVASh.Models.NewTaskModel
+@{
+    ViewData["Title"] = "Новая задача";
+}
+<div class="text-center">
+    <h2>Новая задача для @Model.UserName</h2>
+    <form asp-action="AddTask" asp-controller="Head" asp-anti-forgery="true">
+        <div class="validation" asp-validation-summary="ModelOnly"></div>
+        <div>
+            <input type="hidden" value="@Model.UserId" asp-for="UserId"/>
+            <div>
+                <label asp-for="Name">Имя задачи</label><br />
+                <input type="text" asp-for="Name" />
+                <span asp-validation-for="Name" />
+            </div>
+            <div>
+                <label asp-for="Description">Описание</label><br />
+                <textarea asp-for="Description"></textarea>
+                <span asp-validation-for="Description" />
+            </div>
+            <div>
+                <label asp-for="PlaceId">Место</label><br />
+                @Html.DropDownList("PlaceId", @Model.Places, "Выберите место")
+                <span asp-validation-for="PlaceId" />
+            </div>
+            <div>
+                <label asp-for="TimeToDo">Дата выполнения</label><br />
+                <input type="datetime-local" asp-for="TimeToDo" />
+                <span asp-validation-for="TimeToDo" />
+            </div>
+            <div>
+                <label asp-for="EndOfDoing">Дата окончания выполнения</label><br />
+                <input type="datetime-local" asp-for="EndOfDoing" />
+                <span asp-validation-for="EndOfDoing" />
+            </div>
+            <div>
+                <input type="submit" value="Создать" />
+            </div>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,27 @@
+﻿@model LAVASh.Models.SubordinateTaskModel
+@{
+    ViewData["Title"] = "Мои задачи";
+    List<(string name, string description, string date, string place )> users = new List<(string name, string description, string date, string place )> 
+    { (name:"First Task", description:"do something", date:"12.12.2022", place:"somewhere"), (name:"Second Task", description:"not to do something", date:"12.12.2021", place:"nowhere") };
+}
+<div class="text-center">
+    <div>
+        <h1 class="display-4">Мои задачи</h1>
+    </div>
+    <table class = "table">
+        <tr><td>Имя задачи</td> <td>Описание</td> <td>Дата выполнения</td> <td>Место выполнения</td> <td>Предельная дата</td></tr>
+        @foreach (var task in @Model.Tasks)
+        {
+            <tr> 
+                <td> <p>@task.Name</p> </td> 
+                <td> <p>@task.Description</p> </td> 
+                <td> <p>@task.TimeToDo</p> </td> 
+                <td> <p>@task.Place</p> </td> 
+                <td> <p>@task.Deadline</p> </td> 
+                <td> <input type="button" value = "✓" asp-action=""/> </td> 
+            </tr>
+        }
+        
+        
+    </table>
+</div>

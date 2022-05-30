@@ -1,0 +1,20 @@
+﻿@model List<LAVASh.Models.WorkerListModel>
+@{
+    ViewData["Title"]= "Подчинённые";
+}
+<div class="text-center">
+    <div>
+        <h1 class="display-4">Подчинённые</h1>
+    </div>
+    <div class="text-center" style="align-items: center; margin: 0 auto; width: 80%">
+        <table class = "table">
+        @foreach (var user in @Model)
+        {
+            <tr> <td> <a asp-action="userpage" asp-controller="head" asp-route-id="@user.Id">@user.FullName</a> </td> </tr>
+        }
+        
+        
+    </table>
+    </div>
+    
+</div>

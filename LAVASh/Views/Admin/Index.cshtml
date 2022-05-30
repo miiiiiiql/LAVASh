@@ -1,0 +1,28 @@
+﻿@model LAVASh.Models.AdminPanelModel
+@{
+    ViewData["Title"] = "Панель администратора";
+}
+<div>
+    <form asp-action="Index" asp-controller="Admin" method="post" asp-anti-forgery="true">
+        <table class = "shop_table">
+        <tr>
+            <td>
+                <div class="form-group">
+                    @Html.DropDownList("HeadId", @Model.Workers, "Выберите начальника")
+                    <span asp-validation-for="HeadId"/>
+                </div>
+            </td>
+            <td><input type="submit" value = "Подчинить"/></td> 
+            <td>
+                <div class="form-group">
+                    @Html.DropDownList("WorkerId", @Model.Workers, "Выберите подчинёного")
+                    <span asp-validation-for="WorkerId" />
+                </div>
+            </td>
+        </tr>
+
+    </table>
+    </form>
+    
+
+</div>
